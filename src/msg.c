@@ -26,7 +26,7 @@ void PrintMenu(void){
   "                                                                         \n"
   "Report issues to <{pratas}@ua.pt>.                                       \n"
   "                                                                         \n",
-  DEF_THREADS);
+  DEF_THREAD);
   }
 
 void PrintVersion(void){

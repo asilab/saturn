@@ -33,12 +33,12 @@ typedef int8_t   I8;
 #define DEF_VERSION            0
 #define DEF_VERBOSE            0
 #define DEF_FORCE              0
-#define DEF_THREADS            4
+#define DEF_THREAD             4
 #define DEF_ALPHA_SIZE         2
 #define DEF_MAXT               10000
 
-#define MIN_THREADS            1
-#define MAX_THREADS            65535
+#define MIN_THREAD             1
+#define MAX_THREAD             65535
 #define MIN_ALPHA_SIZE         2
 #define MAX_ALPHA_SIZE         255
 #define MIN_MAXT               1
