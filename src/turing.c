@@ -17,7 +17,7 @@
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-T_MACHINE *Create_TM(uint32_t, uint32_t, uint8_t, uint32_t){
+T_MACHINE *Create_TM(uint32_t a, uint32_t b, uint8_t c, uint32_t d){
 
 
   }
@@ -32,7 +32,7 @@ void Update_TM(T_MACHINE *TM){
 
 void Remove_TM(T_MACHINE *TM){
   int32_t x;
-  for(x = 0 ; x < TM->alphabet ; ++x)
+  for(x = 0 ; x < TM->n_alphabet ; ++x)
     Free(TM->rules);
   Free(TM->rules); 
   Free(TM->alphabet); 
@@ -49,5 +49,3 @@ void Reset_TM_Tape(T_MACHINE *TM){
   }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-#endif

@@ -24,7 +24,7 @@ void PrintMenu(void){
   "  < [std  in]              sequence,                                     \n"
   "  > [std out]              output results.                               \n"
   "                                                                         \n"
-  "Report issues to <{pratas}@ua.pt>.                                       \n"
+  "Report issues to <pratas@ua.pt>.                                         \n"
   "                                                                         \n",
   DEF_THREAD);
   }

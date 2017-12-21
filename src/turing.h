@@ -3,6 +3,8 @@
 
 #include "defs.h"
 
+#define DEFAULT_TAPE_SIZE 10000
+
 typedef struct{
   int8_t      *tape;
   int32_t     n_tape;
