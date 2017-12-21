@@ -11,6 +11,6 @@ SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 SET(RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 SET(CMAKE_BUILD_TYPE Release)
 
-add_executable (SATURN saturn.c mem.c time.c msg.c common.c buffer.c defs.h param.h) 
+add_executable (SATURN saturn.c mem.c time.c msg.c common.c turing.c buffer.c defs.h param.h) 
 TARGET_LINK_LIBRARIES(SATURN pthread)
 
