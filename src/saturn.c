@@ -13,6 +13,10 @@
 #include "time.h"
 #include "defs.h"
 #include "param.h"
+#include "files.h"
+#include "strings.h"
+#include "alphabet.h"
+#include "args.h"
 #include "msg.h"
 #include "buffer.h"
 #include "common.h"
@@ -83,6 +87,11 @@ int32_t main(int argc, char *argv[]){
   P->threshold = fabs(ArgsDouble(0.9,   p, argc, "-t"));
   P->max_time  = ArgsNum  (DEF_MAXT,    p, argc, "-m", MIN_MAXT, MAX_MAXT);
 
+  // BUILD ALPHABET & GET CARDINALITY
+  ALPHABET *AL = CreateAlphabet(1);
+  LoadAlphabet(AL, stdin);
+  
+
   // READ MODEL PARAMETERS FROM ARGS
   T = (Threads *) Calloc(P->nThreads, sizeof(Threads));
   for(ref = 0 ; ref < P->nThreads ; ++ref){
@@ -101,6 +110,9 @@ int32_t main(int argc, char *argv[]){
   fprintf(stderr, "\n");
 
   fprintf(stderr, "==[ RESULTS ]=======================\n");
+
+
+  RemoveAlphabet(AL);
   Free(T);
 
   return EXIT_SUCCESS;
