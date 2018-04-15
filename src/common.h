@@ -3,6 +3,8 @@
 
 #include "defs.h"
 
+#define PROGRESS_MIN 1000
+
 typedef struct{
   uint64_t size;
   uint64_t bytes;

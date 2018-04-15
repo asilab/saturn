@@ -43,6 +43,7 @@ typedef int8_t   I8;
 #define MAX_ALPHA_SIZE         255
 #define MIN_MAXT               1
 #define MAX_MAXT               99999999
+#define MAX_STR                4098
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

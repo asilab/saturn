@@ -71,27 +71,26 @@ int32_t main(int argc, char *argv[]){
   Threads  *T;
   
   P = (Parameters *) Malloc(1 * sizeof(Parameters));
-  if((P->help = ArgsState(DEF_HELP, p, argc, "-h")) == 1 || argc < 2){
+  if((P->help = ArgState(DEF_HELP, p, argc, "-h")) == 1 || argc < 2){
     PrintMenu();
     return EXIT_SUCCESS;
     }
 
-  if(ArgsState(DEF_VERSION, p, argc, "-V")){
+  if(ArgState(DEF_VERSION, p, argc, "-V")){
     PrintVersion();
     return EXIT_SUCCESS;
     }
 
-  P->verbose   = ArgsState(DEF_VERBOSE, p, argc, "-v");
-  P->force     = ArgsState(DEF_FORCE,   p, argc, "-F");
-  P->nThreads  = ArgsNum  (DEF_THREAD,  p, argc, "-n", MIN_THREAD, MAX_THREAD);
-  P->threshold = fabs(ArgsDouble(0.9,   p, argc, "-t"));
-  P->max_time  = ArgsNum  (DEF_MAXT,    p, argc, "-m", MIN_MAXT, MAX_MAXT);
+  P->verbose   = ArgState  (DEF_VERBOSE, p, argc, "-v");
+  P->force     = ArgState  (DEF_FORCE,   p, argc, "-F");
+  P->nThreads  = ArgNumber (DEF_THREAD,  p, argc, "-n", MIN_THREAD, MAX_THREAD);
+  P->threshold = fabs  (ArgDouble(0.9,   p, argc, "-t"));
+  P->max_time  = ArgNumber (DEF_MAXT,    p, argc, "-m", MIN_MAXT, MAX_MAXT);
 
   // BUILD ALPHABET & GET CARDINALITY
   ALPHABET *AL = CreateAlphabet(1);
   LoadAlphabet(AL, stdin);
   
-
   // READ MODEL PARAMETERS FROM ARGS
   T = (Threads *) Calloc(P->nThreads, sizeof(Threads));
   for(ref = 0 ; ref < P->nThreads ; ++ref){

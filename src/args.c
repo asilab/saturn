@@ -52,26 +52,6 @@ char *ArgString(char *def, char *arg[], uint32_t n, char *str){
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-uint32_t ReadFNames(Parameters *P, char *arg){
-  uint32_t nFiles = 1, k = 0, argLen;
-  
-  argLen = strlen(arg);
-  for( ; k != argLen ; ++k)
-    if(arg[k] == ':')
-      ++nFiles;
-  P->tar = (char **) Malloc(nFiles * sizeof(char *));
-  P->tar[0] = strtok(arg, ":");
-  TestReadFile(P->tar[0]);
-  for(k = 1 ; k != nFiles ; ++k){
-    P->tar[k] = strtok(NULL, ":");
-    TestReadFile(P->tar[k]);
-    }
-
-  return nFiles;
-  }
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 void PrintArgs(Parameters *P){
   uint32_t n = 0;
 
