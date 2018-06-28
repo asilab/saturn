@@ -1,5 +1,4 @@
-<p align="center"><img src="imgs/logo.png" 
-alt="SATURN" width="400" border="0" /></p>
+<p align="center"><img src="imgs/logo.png" alt="SATURN" width="220" border="0" /></p>
 <p>&nbsp;</p>
 <p align="justify">
 
